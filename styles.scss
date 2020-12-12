@@ -1,0 +1,470 @@
+$colors:(
+primary:white,
+accent:rgb(98, 98, 201),
+dark:#1A1D21,
+gray:#F3F4F5,
+);
+$font:'Share Tech', sans-serif;
+$mobile:768px;
+
+@mixin mobile{
+    @media(max-width:#{$mobile}){
+        @content;
+    }
+}
+
+.btn{
+    
+    height:3rem;
+    width:7rem;
+    border: none;
+    border-radius: 3px;
+    margin: 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px color(accent);
+    color:color(accent);
+    
+   
+    }
+
+
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: $font;
+}
+@function color($color-name){
+@return map-get($colors,$color-name)
+}
+.hero-section{
+height:100vh;
+object-fit: contain;
+position: relative;
+display:flex;
+width:100%;
+
+
+
+video{
+height:100%; 
+object-fit: cover; 
+width:100%;
+z-index:-100;
+  
+
+}  
+nav{
+display: flex;
+width:100%;
+position:absolute;
+justify-content: space-between;
+align-items: center;
+
+.menu{
+    display: none;
+
+    @include mobile{
+        display: block;
+        font-size: 1.5rem;
+        margin-right: 50px;
+        z-index: 100;
+    }
+}
+
+span:not(.span2){
+    font-size: 40px;
+    font-weight: bold;
+    color: color(primary);
+    padding-left: 20px;
+}
+.span2{
+    color:color(accent);
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.nav-links{
+display:flex;
+list-style: none;
+z-index:10;
+
+
+
+@include mobile{
+    flex-direction: column;
+    position:absolute;
+    display:flex;
+    height:100vh;
+    background-color:color(accent);
+    justify-content:space-around;
+    align-items: center;
+    right:0vh;
+    top:0vh;
+    z-index: 12;
+    width:50%;
+    transform: translateX(100%);
+    position: fixed;
+    transition: transform 0.5s ease-in;
+
+   
+    
+
+}
+
+
+
+li{
+margin-right: 40px;
+font-size: 1.3rem;
+
+
+
+a{
+text-decoration: none;
+color: color(primary);
+cursor: pointer;
+
+&:hover{
+color:color(accent);
+} 
+}    
+
+
+}
+
+}
+
+
+
+i{
+margin:20px;
+font-size: 3rem;
+color: color(primary);
+}
+}
+ .hero-content{
+    position: absolute;
+    align-self: center;
+    text-align: center;
+    z-index: 11;
+    
+    
+    
+    .btn-outline{
+        background-color: transparent;
+        border: 3px solid color(primary);
+        color: color(primary);
+
+        &:hover{
+            background-color: color(accent);
+        }
+    }
+        h2{
+            font-size: 80px;
+            color: color(accent);
+            text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212, 0 22px 30px rgba(0,0,0,0.9);
+            margin-bottom: 50px;
+
+            @include mobile{
+                font-size: 40px  ;
+            }
+        }
+        p{
+            font-size: 20px;
+            color: color(primary);
+            text-shadow: 1px 1px 1px color(accent);
+            
+        }     
+     
+    }
+    
+ 
+    
+    
+    
+    
+
+
+}
+.hero-section:not(nav){
+    justify-content: center;
+}
+
+.info-section{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    flex-wrap: wrap;
+    background-color: color(dark);
+
+    @include mobile{
+        height: 260vh;
+    }
+    
+        .circle{
+            height: 300px;
+            width:300px;
+            background-color: color(accent);
+            border-radius: 50%;
+            z-index:11;
+            box-shadow: 1px 1px 1px color(dark);
+            
+            
+        
+    }
+    svg{
+        position: absolute;
+        width:100%;
+        bottom:0;
+        
+        
+        
+    }
+    
+    
+    
+    .heading{
+        position: absolute;
+        top:-20px;
+        padding: 30px;
+        color:color(primary);
+        font-size: 2rem;
+        
+        @include mobile{
+            text-align: center;
+        }
+    }
+    
+    img{
+        width:100%;
+        
+        
+    }
+    .img3{
+        height: 200px;
+    }
+    .card{
+        margin:5px;
+        box-shadow: 0 3px 15px rgb(0, 0, 0);
+        text-align: center;
+        position: relative;
+        width:300px;
+        height: 250px;
+        background-color:color(accent);
+        transition: 0.5s;
+        z-index: 10;
+        margin:0px;
+        
+        color:color(primary);
+        
+        .content{
+            position: absolute;
+            left:0;
+            bottom:0;
+         width: 100%;
+            height: 40px;
+            padding: 12px;
+            background:color(dark);
+            transition:all 0.5s cubic-bezier(.48,-0.28,0.41,1.4);
+            overflow: hidden;
+            
+
+            p{
+                margin:10px 0 0;
+                padding: 1em 1em;
+                transform: translatY(2em);
+               
+                
+            }
+        
+           
+        }
+    
+    }
+    .card:hover  .content{
+        width:100%;
+        height: 75%;
+        left:0;
+        bottom: 0;
+        cursor: pointer;
+        
+    }
+
+    
+}
+.icon-section{
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: color(accent);
+
+    @include mobile{
+        flex-direction: column;
+        height: 80vh;
+    }
+
+    .icon{
+        text-align: center;
+        color:color(primary);
+
+        h1{
+            color:color(dark);
+        }
+        h2{
+            margin-bottom: 10px;
+        }
+
+        i{
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+    }
+}
+.form-section{
+    display: flex;
+    
+     
+    @include mobile{
+        flex-direction: column;
+     }
+    .form-picture{
+        flex-basis: 50%;
+        img{
+            width:100%;
+            height: 100%;
+        
+            
+        }
+    }
+    .form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 50%;
+        text-align: center;
+        background-color: color(gray);
+
+        @include mobile{
+           width:100%;
+        }
+
+        h1{
+            margin-bottom: 20px;
+        }
+
+        p{
+            margin-bottom: 20px;
+        }
+
+        .form-parts{
+            display: flex;
+            flex-direction: column;
+
+            input{
+                width:400px;
+                height: 40px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                border:1px gray solid;
+                font-size: 1.5em;
+
+                @include mobile{
+                    width:100%;
+                 }
+            
+               
+            }
+            
+            button{
+                width:400px;
+                height: 40px;
+                background-color: color(accent);
+                border-radius: 5px;
+                border:none;
+                font-size:2rem;
+                color:white;
+                font-weight: bold;
+                cursor: pointer;
+
+                
+                @include mobile{
+                    width:100%;
+                    margin-bottom: 10px;
+                 }
+            }
+        }
+    }
+}
+       
+        .social-line{
+            height:10vh;
+            background-color: color(accent);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: color(primary);
+
+            .text{
+                margin-left: 30px;
+            }
+            .social-icons{
+                display: flex;
+                margin-right: 30px;
+                
+                i{
+                margin-right: 10px;
+                font-size: 1.5rem;
+                 }
+            
+            }
+        }
+        .footer{
+            display: flex;
+            justify-content: space-around;
+            height:50vh;
+            align-items: center;
+            background-color: color(gray);
+            
+
+            @include mobile{
+                height: 125vh;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            p{
+                margin-bottom:10px;
+            }
+            h2{
+                margin-bottom: 20px;
+                padding-bottom:10px;
+                position: relative;
+            &:after{
+                content:"";
+                position: absolute;
+                background-color: color(accent);
+                height: 2px;
+                width:50px;
+                bottom:0;
+                left:0;
+                @include mobile{
+                    width:100%;
+                }
+            }
+            }
+            span{
+                padding: 20px;
+            }
+        }
+      
+        nav .nav-links.nav-active{
+            transform: translateX(0%);
+        }
